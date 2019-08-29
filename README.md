@@ -1,4 +1,4 @@
-# Issue when testing ``@angular/material` components with protractor
+# Issue when testing `@angular/material` components with protractor
 
 This repository contains a minimal reproduction case for an issue I encountered when trying to test `@angular/material` with Protractor.
 
