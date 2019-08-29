@@ -21,7 +21,7 @@ npm run e2e:noserver  # as the execution is flaky
                       # you may need to run it multiple times in a row
 ```
 
-## Potential workaound
+## Potential workaround
 
 Wait for something to appear quickly (100ms?):
 
