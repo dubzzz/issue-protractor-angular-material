@@ -1,0 +1,20 @@
+<div *ngFor="let name of selectInputs">
+  <mat-form-field>
+    <mat-label>I am {{ name }}</mat-label>
+    <mat-select [id]="name" [(ngModel)]="selectedValues[name]">
+      <mat-option [value]="optionName" *ngFor="let optionName of selectOptions">
+        {{ optionName }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div>
+  <button
+    mat-raised-button
+    color="primary"
+    id="send-it"
+    [disabled]="buttonLabel() == 'OFF'"
+  >
+    {{ buttonLabel() }}
+  </button>
+</div>
