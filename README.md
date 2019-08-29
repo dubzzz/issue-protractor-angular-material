@@ -27,3 +27,5 @@ Wait for something to appear quickly (100ms?):
 
 - Either `await browser.sleep(100)`
 - Or `await browser.wait(..., 100)`
+
+But switching to `NoopAnimationsModule` seems to be an even better idea.
