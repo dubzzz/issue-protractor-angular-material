@@ -1,7 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatButtonModule, MatSelectModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatSelectModule,
+  MatSnackBarModule
+} from '@angular/material';
 import {
   BrowserAnimationsModule,
   NoopAnimationsModule
@@ -13,8 +18,10 @@ import { AppComponent } from './app.component';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
     MatButtonModule,
     MatSelectModule,
+    MatSnackBarModule,
     // BrowserAnimationsModule,
     NoopAnimationsModule,
     FormsModule

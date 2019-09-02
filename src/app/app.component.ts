@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -14,11 +16,35 @@ export class AppComponent {
     {}
   );
 
+  constructor(
+    readonly snackBar: MatSnackBar,
+    readonly httpClient: HttpClient
+  ) {}
+
   buttonLabel() {
     return this.selectInputs
       .map(name => this.selectedValues[name])
       .filter(text => text === 'Ferrari').length % 2
       ? 'OFF'
       : 'ON';
+  }
+
+  openToast() {
+    this.snackBar.open('This is a message from snackbar', 'close', {
+      duration: -1,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
+    });
+  }
+
+  async openAsyncToast() {
+    const r: any = await this.httpClient
+      .get(`https://api.ipify.org?format=json`)
+      .toPromise();
+    this.snackBar.open(`Your ip is ${r.ip}`, 'close', {
+      duration: -1,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
+    });
   }
 }

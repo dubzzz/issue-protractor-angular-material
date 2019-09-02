@@ -17,4 +17,15 @@
   >
     {{ buttonLabel() }}
   </button>
+  <button mat-raised-button color="accent" id="open-it" (click)="openToast()">
+    Open toast
+  </button>
+  <button
+    mat-raised-button
+    color="accent"
+    id="async-open-it"
+    (click)="openAsyncToast()"
+  >
+    Open async toast
+  </button>
 </div>

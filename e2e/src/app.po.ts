@@ -20,4 +20,18 @@ export class AppPage {
       (await element(by.id('send-it')).getAttribute('disabled')) === null;
     expect(enabled).toBe(on);
   }
+
+  async openPopup() {
+    await element(by.id('open-it')).click();
+  }
+
+  async openAsyncPopup() {
+    await element(by.id('async-open-it')).click();
+  }
+
+  async closePopup() {
+    await element(by.tagName('snack-bar-container'))
+      .element(by.tagName('button'))
+      .click();
+  }
 }
